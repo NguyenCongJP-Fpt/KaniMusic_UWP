@@ -1,0 +1,83 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="KaniMusic_UWP_V0._1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KaniMusic_UWP_V0._1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger x:ConnectionId='2'                                                             />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="NavView.PaneDisplayMode" Value="Top"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <NavigationView x:ConnectionId='3' x:Name="NavView" 
+                        IsSettingsVisible="True" 
+                                                
+                        Header="Welcome" 
+                                                         >
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:ConnectionId='4' Content="Home" x:Name="home" Tag="home">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE10F;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItemSeparator/>
+                <!--<NavigationViewItemHeader Content="Main pages"/>-->
+                <NavigationViewItem x:ConnectionId='5' Icon="OutlineStar" Content="BXH" x:Name="Rank" Tag="rank"/>
+                <NavigationViewItem x:ConnectionId='6' Icon="Audio" Content="Music" x:Name="Musics" Tag="musics"/>
+                <NavigationViewItem x:ConnectionId='7' Icon="List" Content="Play Lists" x:Name="Playlist" Tag="playlists"/>
+                <NavigationViewItem x:ConnectionId='8' Icon="Video" Content="Video" x:Name="Videos" Tag="videos"/>
+                <NavigationViewItemSeparator Content="--------"/>
+                <NavigationViewItem x:ConnectionId='9' Icon="Clock" Content="Listened" x:Name="Listened" Tag="listened"/>
+                <NavigationViewItem x:ConnectionId='10' Icon="Favorite" Content="Favorite List" x:Name="Favorite" Tag="favorite"/>
+                <NavigationViewItem x:ConnectionId='11' Icon="Contact" Content="Tài Khoản Của Tôi" x:Name="MyAccount" Tag="myaccount"/>
+            </NavigationView.MenuItems>
+
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:ConnectionId='12' x:Name="ASB" QueryIcon="Find"/>
+            </NavigationView.AutoSuggestBox>
+
+            <NavigationView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Margin="24,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource TitleTextBlockStyle}"
+                           FontSize="28"
+                           VerticalAlignment="Center"/>
+                        <CommandBar Grid.Column="1"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            DefaultLabelPosition="Right"
+                            Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
+                            <AppBarButton x:ConnectionId='14' x:Name="uploadAppBtn" Label="Upload" Icon="Upload"                      />
+                            <AppBarButton x:ConnectionId='15' x:Name="loginAppBtn" Label="Đăng Nhập" Icon="Contact2"                 />
+                            <AppBarButton x:ConnectionId='16' x:Name="registerAppBtn" Label="Đăng Ký" Icon="AddFriend"                    />
+                            <AppBarButton x:ConnectionId='17' x:Name="logoutAppBtn" Label="Đăng Xuất" Icon="Clear"                    >
+                                
+                            </AppBarButton>
+                        </CommandBar>
+                    </Grid>
+                </DataTemplate>
+            </NavigationView.HeaderTemplate>
+            <Frame x:ConnectionId='18' x:Name="ContentFrame" Margin="5,-13,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </NavigationView>
+    </Grid>
+</Page>
+

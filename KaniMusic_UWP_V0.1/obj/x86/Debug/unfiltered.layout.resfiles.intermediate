@@ -1,4 +1,5 @@
 WinMetadata\Windows.winmd
+Assets\avatar.jpg
 Assets\japan.jpg
 Assets\LockScreenLogo.scale-200.png
 Assets\SplashScreen.scale-200.png
@@ -11,9 +12,14 @@ App.xbf
 KaniMusic_UWP_V0.1.xr.xml
 MainPage.xbf
 Views\CreateSong.xbf
+Views\Favorite.xbf
 Views\HomePage.xbf
+Views\Listened.xbf
 Views\Login.xbf
 Views\Music.xbf
 Views\MyAccount.xbf
+Views\MyVideo.xbf
+Views\PlayList.xbf
+Views\Rank.xbf
 Views\Register.xbf
 Properties\Default.rd.xml

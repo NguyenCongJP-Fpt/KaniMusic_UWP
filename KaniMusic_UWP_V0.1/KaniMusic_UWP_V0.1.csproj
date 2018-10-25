@@ -110,8 +110,14 @@
     <Compile Include="Views\CreateSong.xaml.cs">
       <DependentUpon>CreateSong.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Favorite.xaml.cs">
+      <DependentUpon>Favorite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Listened.xaml.cs">
+      <DependentUpon>Listened.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -121,6 +127,15 @@
     </Compile>
     <Compile Include="Views\MyAccount.xaml.cs">
       <DependentUpon>MyAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyVideo.xaml.cs">
+      <DependentUpon>MyVideo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlayList.xaml.cs">
+      <DependentUpon>PlayList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rank.xaml.cs">
+      <DependentUpon>Rank.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
@@ -133,6 +148,7 @@
     <None Include="KaniMusic_UWP_V0.1_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\avatar.jpg" />
     <Content Include="Assets\japan.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -156,7 +172,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Favorite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Listened.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,6 +193,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MyAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MyVideo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlayList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Rank.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

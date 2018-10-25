@@ -1,13 +1,18 @@
 ﻿using KaniMusic_UWP_V0._1.Entity;
+using KaniMusic_UWP_V0._1.Service;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -41,54 +46,55 @@ namespace KaniMusic_UWP_V0._1.Views
         public Music()
         {
             this.ListSong = new ObservableCollection<Song>();
-            this.ListSong.Add(new Song()
-            {
-                name = "Chưa bao giờ",
-                singer = "Hà Anh Tuấn",
-                thumbnail = "https://file.tinnhac.com/resize/600x-/music/2017/07/04/19554480101556946929-b89c.jpg",
-                link = "https://c1-ex-swe.nixcdn.com/NhacCuaTui963/ChuaBaoGioSEESINGSHARE2-HaAnhTuan-5111026.mp3"
-            });
-            this.ListSong.Add(new Song()
-            {
-                name = "Tình thôi xót xa",
-                singer = "Hà Anh Tuấn",
-                thumbnail = "https://i.ytimg.com/vi/XyjhXzsVdiI/maxresdefault.jpg",
-                link = "https://c1-ex-swe.nixcdn.com/NhacCuaTui963/TinhThoiXotXaSEESINGSHARE1-HaAnhTuan-4652191.mp3"
-            });
-            this.ListSong.Add(new Song()
-            {
-                name = "Tháng tư là tháng nói dối của em",
-                singer = "Hà Anh Tuấn",
-                thumbnail = "https://sky.vn/wp-content/uploads/2018/05/0-30.jpg",
-                link = "https://od.lk/s/NjFfMjM4MzQ1OThf/ThangTuLaLoiNoiDoiCuaEm-HaAnhTuan-4609544.mp3"
-            });
-            this.ListSong.Add(new Song()
-            {
-                name = "Nơi ấy bình yên",
-                singer = "Hà Anh Tuấn",
-                thumbnail = "https://i.ytimg.com/vi/A8u_fOetSQc/hqdefault.jpg",
-                link = "https://c1-ex-swe.nixcdn.com/NhacCuaTui946/NoiAyBinhYenSeeSingShare2-HaAnhTuan-5085337.mp3"
-            });
-            this.ListSong.Add(new Song()
-            {
-                name = "Giấc mơ chỉ là giấc mơ",
-                singer = "Hà Anh Tuấn",
-                thumbnail = "https://i.ytimg.com/vi/J_VuNwxSEi0/maxresdefault.jpg",
-                link = "https://c1-ex-swe.nixcdn.com/NhacCuaTui945/GiacMoChiLaGiacMoSeeSingShare2-HaAnhTuan-5082049.mp3"
-            });
-            this.ListSong.Add(new Song()
-            {
-                name = "Người tình mùa đông",
-                singer = "Hà Anh Tuấn",
-                thumbnail = "https://i.ytimg.com/vi/EXAmxBxpZEM/maxresdefault.jpg",
-                link = "https://c1-ex-swe.nixcdn.com/NhacCuaTui963/NguoiTinhMuaDongSEESINGSHARE2-HaAnhTuan-5104816.mp3"
-            });
             this.InitializeComponent();
             this.VolumeSlider.Value = 100;
             _timer.Interval = TimeSpan.FromMilliseconds(1000);
             _timer.Tick += ticktock;
             _timer.Start();
             this.InitializeComponent();
+        }
+
+        //Add bài hát.
+        private async void MyMusicLoaded(object sender, RoutedEventArgs e)
+        {
+            var folder = ApplicationData.Current.LocalFolder;
+            StorageFile file = await folder.GetFileAsync("token.txt");
+            var tokenContent = await FileIO.ReadTextAsync(file);
+            var token = JsonConvert.DeserializeObject<TokenResponse>(tokenContent);
+
+            HttpClient httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", "Basic " + token.token);
+            var responseMessage = httpClient.GetAsync(API_Handle.API_CREATE_SONG);
+            var content = await responseMessage.Result.Content.ReadAsStringAsync();
+            Debug.WriteLine(content);
+            if (responseMessage.Result.StatusCode == HttpStatusCode.OK)
+            {
+                var songResponse = JsonConvert.DeserializeObject<List<Song>>(content);
+                foreach (var song in songResponse)
+                {
+                    ListSong.Add(new Song
+                    {
+                        name = song.name,
+                        thumbnail = song.thumbnail,
+                        author = song.author,
+                        singer = song.singer,
+                        description = song.description,
+                        link = song.link
+                    });
+                }
+                Debug.WriteLine("Oke, da tao thanh cong.");
+            }
+            else
+            {
+                ErrorResponse errorResponse = JsonConvert.DeserializeObject<ErrorResponse>(content);
+                foreach (var key in errorResponse.error.Keys)
+                {
+                    if (this.FindName(key) is TextBlock textBlock)
+                    {
+                        textBlock.Text = errorResponse.error[key];
+                    }
+                }
+            }
         }
 
         private void ticktock(object sender, object e)
@@ -100,10 +106,6 @@ namespace KaniMusic_UWP_V0._1.Views
             Progress.Value = MediaPlayer.Position.TotalSeconds;
         }
 
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
 
         private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -195,6 +197,7 @@ namespace KaniMusic_UWP_V0._1.Views
                 this.volume.Text = vol.Value.ToString();
             }
         }
+
 
     }
 }

@@ -189,39 +189,49 @@ namespace KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[15];
+            _typeNameTable = new string[20];
             _typeNameTable[0] = "KaniMusic_UWP_V0._1.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "KaniMusic_UWP_V0._1.Views.CreateSong";
             _typeNameTable[4] = "Windows.UI.Xaml.Controls.ContentDialog";
             _typeNameTable[5] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[6] = "KaniMusic_UWP_V0._1.Views.HomePage";
-            _typeNameTable[7] = "KaniMusic_UWP_V0._1.Views.Login";
-            _typeNameTable[8] = "KaniMusic_UWP_V0._1.Views.Music";
-            _typeNameTable[9] = "KaniMusic_UWP_V0._1.Views.MyAccount";
-            _typeNameTable[10] = "KaniMusic_UWP_V0._1.Views.Register";
-            _typeNameTable[11] = "KaniMusic_UWP_V0._1.Views.Register.MyResult";
-            _typeNameTable[12] = "System.Enum";
-            _typeNameTable[13] = "System.ValueType";
-            _typeNameTable[14] = "Object";
+            _typeNameTable[6] = "KaniMusic_UWP_V0._1.Views.Favorite";
+            _typeNameTable[7] = "KaniMusic_UWP_V0._1.Views.HomePage";
+            _typeNameTable[8] = "KaniMusic_UWP_V0._1.Views.Listened";
+            _typeNameTable[9] = "KaniMusic_UWP_V0._1.Views.Login";
+            _typeNameTable[10] = "KaniMusic_UWP_V0._1.Views.Music";
+            _typeNameTable[11] = "KaniMusic_UWP_V0._1.Views.MyAccount";
+            _typeNameTable[12] = "KaniMusic_UWP_V0._1.Views.MyVideo";
+            _typeNameTable[13] = "KaniMusic_UWP_V0._1.Views.PlayList";
+            _typeNameTable[14] = "KaniMusic_UWP_V0._1.Views.Rank";
+            _typeNameTable[15] = "KaniMusic_UWP_V0._1.Views.Register";
+            _typeNameTable[16] = "KaniMusic_UWP_V0._1.Views.Register.MyResult";
+            _typeNameTable[17] = "System.Enum";
+            _typeNameTable[18] = "System.ValueType";
+            _typeNameTable[19] = "Object";
 
-            _typeTable = new global::System.Type[15];
+            _typeTable = new global::System.Type[20];
             _typeTable[0] = typeof(global::KaniMusic_UWP_V0._1.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::KaniMusic_UWP_V0._1.Views.CreateSong);
             _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
             _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[6] = typeof(global::KaniMusic_UWP_V0._1.Views.HomePage);
-            _typeTable[7] = typeof(global::KaniMusic_UWP_V0._1.Views.Login);
-            _typeTable[8] = typeof(global::KaniMusic_UWP_V0._1.Views.Music);
-            _typeTable[9] = typeof(global::KaniMusic_UWP_V0._1.Views.MyAccount);
-            _typeTable[10] = typeof(global::KaniMusic_UWP_V0._1.Views.Register);
-            _typeTable[11] = typeof(global::KaniMusic_UWP_V0._1.Views.Register.MyResult);
-            _typeTable[12] = typeof(global::System.Enum);
-            _typeTable[13] = typeof(global::System.ValueType);
-            _typeTable[14] = typeof(global::System.Object);
+            _typeTable[6] = typeof(global::KaniMusic_UWP_V0._1.Views.Favorite);
+            _typeTable[7] = typeof(global::KaniMusic_UWP_V0._1.Views.HomePage);
+            _typeTable[8] = typeof(global::KaniMusic_UWP_V0._1.Views.Listened);
+            _typeTable[9] = typeof(global::KaniMusic_UWP_V0._1.Views.Login);
+            _typeTable[10] = typeof(global::KaniMusic_UWP_V0._1.Views.Music);
+            _typeTable[11] = typeof(global::KaniMusic_UWP_V0._1.Views.MyAccount);
+            _typeTable[12] = typeof(global::KaniMusic_UWP_V0._1.Views.MyVideo);
+            _typeTable[13] = typeof(global::KaniMusic_UWP_V0._1.Views.PlayList);
+            _typeTable[14] = typeof(global::KaniMusic_UWP_V0._1.Views.Rank);
+            _typeTable[15] = typeof(global::KaniMusic_UWP_V0._1.Views.Register);
+            _typeTable[16] = typeof(global::KaniMusic_UWP_V0._1.Views.Register.MyResult);
+            _typeTable[17] = typeof(global::System.Enum);
+            _typeTable[18] = typeof(global::System.ValueType);
+            _typeTable[19] = typeof(global::System.Object);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -258,11 +268,16 @@ namespace KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo
 
         private object Activate_0_MainPage() { return new global::KaniMusic_UWP_V0._1.MainPage(); }
         private object Activate_3_CreateSong() { return new global::KaniMusic_UWP_V0._1.Views.CreateSong(); }
-        private object Activate_6_HomePage() { return new global::KaniMusic_UWP_V0._1.Views.HomePage(); }
-        private object Activate_7_Login() { return new global::KaniMusic_UWP_V0._1.Views.Login(); }
-        private object Activate_8_Music() { return new global::KaniMusic_UWP_V0._1.Views.Music(); }
-        private object Activate_9_MyAccount() { return new global::KaniMusic_UWP_V0._1.Views.MyAccount(); }
-        private object Activate_10_Register() { return new global::KaniMusic_UWP_V0._1.Views.Register(); }
+        private object Activate_6_Favorite() { return new global::KaniMusic_UWP_V0._1.Views.Favorite(); }
+        private object Activate_7_HomePage() { return new global::KaniMusic_UWP_V0._1.Views.HomePage(); }
+        private object Activate_8_Listened() { return new global::KaniMusic_UWP_V0._1.Views.Listened(); }
+        private object Activate_9_Login() { return new global::KaniMusic_UWP_V0._1.Views.Login(); }
+        private object Activate_10_Music() { return new global::KaniMusic_UWP_V0._1.Views.Music(); }
+        private object Activate_11_MyAccount() { return new global::KaniMusic_UWP_V0._1.Views.MyAccount(); }
+        private object Activate_12_MyVideo() { return new global::KaniMusic_UWP_V0._1.Views.MyVideo(); }
+        private object Activate_13_PlayList() { return new global::KaniMusic_UWP_V0._1.Views.PlayList(); }
+        private object Activate_14_Rank() { return new global::KaniMusic_UWP_V0._1.Views.Rank(); }
+        private object Activate_15_Register() { return new global::KaniMusic_UWP_V0._1.Views.Register(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -304,43 +319,78 @@ namespace KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo
                 xamlType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  KaniMusic_UWP_V0._1.Views.HomePage
+            case 6:   //  KaniMusic_UWP_V0._1.Views.Favorite
                 userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_HomePage;
+                userType.Activator = Activate_6_Favorite;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  KaniMusic_UWP_V0._1.Views.Login
+            case 7:   //  KaniMusic_UWP_V0._1.Views.HomePage
+                userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_7_HomePage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  KaniMusic_UWP_V0._1.Views.Listened
+                userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_Listened;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  KaniMusic_UWP_V0._1.Views.Login
                 userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_7_Login;
+                userType.Activator = Activate_9_Login;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  KaniMusic_UWP_V0._1.Views.Music
+            case 10:   //  KaniMusic_UWP_V0._1.Views.Music
                 userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_Music;
+                userType.Activator = Activate_10_Music;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  KaniMusic_UWP_V0._1.Views.MyAccount
+            case 11:   //  KaniMusic_UWP_V0._1.Views.MyAccount
                 userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_MyAccount;
+                userType.Activator = Activate_11_MyAccount;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  KaniMusic_UWP_V0._1.Views.Register
+            case 12:   //  KaniMusic_UWP_V0._1.Views.MyVideo
+                userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_12_MyVideo;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  KaniMusic_UWP_V0._1.Views.PlayList
+                userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_13_PlayList;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 14:   //  KaniMusic_UWP_V0._1.Views.Rank
+                userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_14_Rank;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 15:   //  KaniMusic_UWP_V0._1.Views.Register
                 userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_10_Register;
+                userType.Activator = Activate_15_Register;
                 userType.AddMemberName("Result");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  KaniMusic_UWP_V0._1.Views.Register.MyResult
+            case 16:   //  KaniMusic_UWP_V0._1.Views.Register.MyResult
                 userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Yes", global::KaniMusic_UWP_V0._1.Views.Register.MyResult.Yes);
                 userType.AddEnumValue("No", global::KaniMusic_UWP_V0._1.Views.Register.MyResult.No);
@@ -350,17 +400,17 @@ namespace KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 12:   //  System.Enum
+            case 17:   //  System.Enum
                 userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 13:   //  System.ValueType
+            case 18:   //  System.ValueType
                 userType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 14:   //  Object
+            case 19:   //  Object
                 xamlType = new global::KaniMusic_UWP_V0._1.KaniMusic_UWP_V0_1_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }

@@ -23,7 +23,11 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <NavigationView x:Name="NavView" IsSettingsVisible="True" Loaded="NavView_Loaded" Header="Welcome">
+        <NavigationView x:Name="NavView" 
+                        IsSettingsVisible="True" 
+                        Loaded="NavView_Loaded" 
+                        Header="Welcome" 
+                        ItemInvoked="NavView_ItemInvoked">
 
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Home" x:Name="home" Tag="home">
@@ -32,14 +36,16 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItemSeparator/>
-                <NavigationViewItemHeader Content="Main pages"/>
-                <NavigationViewItem Icon="Contact" Content="Tài Khoản Của Tôi" x:Name="MyAccount" Tag="myaccount"/>
-                <NavigationViewItem Icon="Video" Content="Video" x:Name="Videos" Tag="videos"/>
+                <!--<NavigationViewItemHeader Content="Main pages"/>-->
+                <NavigationViewItem Icon="OutlineStar" Content="BXH" x:Name="Rank" Tag="rank"/>
                 <NavigationViewItem Icon="Audio" Content="Music" x:Name="Musics" Tag="musics"/>
+                <NavigationViewItem Icon="List" Content="Play Lists" x:Name="Playlist" Tag="playlists"/>
+                <NavigationViewItem Icon="Video" Content="Video" x:Name="Videos" Tag="videos"/>
+                <NavigationViewItemSeparator Content="--------"/>
                 <NavigationViewItem Icon="Clock" Content="Listened" x:Name="Listened" Tag="listened"/>
                 <NavigationViewItem Icon="Favorite" Content="Favorite List" x:Name="Favorite" Tag="favorite"/>
-                <NavigationViewItem Icon="List" Content="Play List" x:Name="Playlist" Tag="playlist"/>
-                            </NavigationView.MenuItems>
+                <NavigationViewItem Icon="Contact" Content="Tài Khoản Của Tôi" x:Name="MyAccount" Tag="myaccount"/>
+            </NavigationView.MenuItems>
 
             <NavigationView.AutoSuggestBox>
                 <AutoSuggestBox x:Name="ASB" QueryIcon="Find"/>
@@ -54,21 +60,23 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Style="{StaticResource TitleTextBlockStyle}"
                            FontSize="28"
-                           VerticalAlignment="Center"
-                           Text="Welcome To KaniMusic"/>
+                           VerticalAlignment="Center"/>
                         <CommandBar Grid.Column="1"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Top"
                             DefaultLabelPosition="Right"
                             Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
-                            <AppBarButton Label="Upload" Icon="Upload" Click="btnUploadSong"/>
-                            <AppBarButton Label="Đăng Nhập" Icon="Contact2" Click="btnLogin"/>
-                            <AppBarButton Label="Đăng Ký" Icon="AddFriend" Click="btnRegister"/>
+                            <AppBarButton x:Name="uploadAppBtn" Label="Upload" Icon="Upload" Click="btnUploadSong"/>
+                            <AppBarButton x:Name="loginAppBtn" Label="Đăng Nhập" Icon="Contact2" Click="btnLogin"/>
+                            <AppBarButton x:Name="registerAppBtn" Label="Đăng Ký" Icon="AddFriend" Click="btnRegister"/>
+                            <AppBarButton x:Name="logoutAppBtn" Label="Đăng Xuất" Icon="Clear"  Click="btnSignout">
+                                
+                            </AppBarButton>
                         </CommandBar>
                     </Grid>
                 </DataTemplate>
             </NavigationView.HeaderTemplate>
-            <Frame x:Name="ContentFrame" Margin="24"/>
+            <Frame x:Name="ContentFrame" Margin="5,-13,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </NavigationView>
     </Grid>
 </Page>

@@ -1,0 +1,94 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="KaniMusic_UWP_V0._1.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KaniMusic_UWP_V0._1.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:entity="using:KaniMusic_UWP_V0._1.Entity"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"                        >
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid>
+                <Grid>
+                    <TextBlock Text="Playlists Hot" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="20,0,0,0"/>
+                </Grid>
+                <GridView x:ConnectionId='9'                                              x:Name="PlayList" Margin="20,50,0,0">
+                    <GridView.ItemTemplate>
+                        <DataTemplate                         >
+                            <StackPanel x:ConnectionId='10' Padding="0" Orientation="Horizontal" Tag="{Binding}"                                           Width="300" Margin="0,30">
+                                <Rectangle Height="100" Width="100">
+                                    <Rectangle.Fill>
+                                        <ImageBrush x:ConnectionId='13'                                 />
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <StackPanel Margin="20,0,0,0">
+                                    <TextBlock x:ConnectionId='11'                      VerticalAlignment="Center" 
+                                               Style="{ThemeResource BaseTextBlockStyle}" 
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}"
+                                                Margin="0,0,0,0"/>
+                                    <TextBlock x:ConnectionId='12'                        VerticalAlignment="Center"                                                
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" 
+                                               Margin="0,7,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid>
+                    <TextBlock Text="Music Hot" Style="{ThemeResource SubheaderTextBlockStyle}" Margin="20,0,0,0"/>
+                </Grid>
+                <ListView x:ConnectionId='3'                                              x:Name="MenuList" Margin="10,50,0,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate                         >
+                            <StackPanel x:ConnectionId='4' Padding="0" Orientation="Horizontal" Tag="{Binding}"                                          >
+                                <Ellipse Height="50" Width="50">
+                                    <Ellipse.Fill>
+                                        <ImageBrush x:ConnectionId='8'                                 />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <StackPanel Margin="24,12,0,0">
+                                    <TextBlock x:ConnectionId='5'                      VerticalAlignment="Center" 
+                                               Style="{ThemeResource BaseTextBlockStyle}" 
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}"
+                                                Margin="0,0,0,0"/>
+                                    <TextBlock x:ConnectionId='6'                        VerticalAlignment="Center"                                                
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" 
+                                               Margin="0,7,0,0"/>
+                                    <TextBlock x:ConnectionId='7'                             VerticalAlignment="Center"                                                
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" 
+                                               Margin="0,7,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <MediaElement x:ConnectionId='2' x:Name="mediaPlayer" VerticalAlignment="Top" Width="Auto" Height="100" Source="{Binding SelectedItem.link, ElementName=MyListView}" 
+                          AreTransportControlsEnabled="True">
+                <MediaElement.TransportControls>
+                    <MediaTransportControls IsPreviousTrackButtonVisible="True"
+                                            IsFastRewindButtonVisible="True"
+                                            IsNextTrackButtonVisible="True" 
+                                            IsFastForwardButtonVisible="True"
+                                            IsFastForwardEnabled="True"/>
+                </MediaElement.TransportControls>
+            </MediaElement>
+        </Grid>
+    </Grid>
+</Page>
+

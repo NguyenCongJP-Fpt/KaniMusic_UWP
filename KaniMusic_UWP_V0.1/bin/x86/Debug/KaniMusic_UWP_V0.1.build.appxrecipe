@@ -529,6 +529,9 @@
     <AppxPackagedFile Include="C:\Users\NguyenCongJP\.nuget\packages\sqlite\3.13.0\runtimes\win10-x86\nativeassets\uap10.0\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\Assets\avatar.jpg">
+      <PackagePath>Assets\avatar.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\Assets\japan.jpg">
       <PackagePath>Assets\japan.jpg</PackagePath>
     </AppxPackagedFile>
@@ -574,8 +577,14 @@
     <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\CreateSong.xbf">
       <PackagePath>Views\CreateSong.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\Favorite.xbf">
+      <PackagePath>Views\Favorite.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\HomePage.xbf">
       <PackagePath>Views\HomePage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\Listened.xbf">
+      <PackagePath>Views\Listened.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\Login.xbf">
       <PackagePath>Views\Login.xbf</PackagePath>
@@ -585,6 +594,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\MyAccount.xbf">
       <PackagePath>Views\MyAccount.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\MyVideo.xbf">
+      <PackagePath>Views\MyVideo.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\PlayList.xbf">
+      <PackagePath>Views\PlayList.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\Rank.xbf">
+      <PackagePath>Views\Rank.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\NguyenCongJP\source\repos\HOC KY 3\KaniMusic_UWP_V0.1\KaniMusic_UWP_V0.1\bin\x86\Debug\Views\Register.xbf">
       <PackagePath>Views\Register.xbf</PackagePath>

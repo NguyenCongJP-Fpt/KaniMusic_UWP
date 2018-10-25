@@ -9,7 +9,69 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Text="Tai Khoan Cua Toi"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <PersonPicture x:ConnectionId='8' x:Name="img_avatar" Grid.Column="0" HorizontalAlignment="Center"/>
+                <!--<Image Source="/Assets/avatar.jpg" HorizontalAlignment="Center" Height="200" VerticalAlignment="Center" Width="200"/>-->
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel Grid.Column="1" HorizontalAlignment="Left" Margin="10 0 0 0">
+                    <TextBlock x:ConnectionId='4' HorizontalAlignment="Left" x:Name="txt_fullname" Text="Full Name" FontWeight="Bold" FontSize="24"/>
+                    <TextBlock x:ConnectionId='5' HorizontalAlignment="Left" x:Name="txt_email" Text="Email: " Foreground="Gray"/>
+                    <TextBlock x:ConnectionId='6' HorizontalAlignment="Left" x:Name="txt_birthday" Text="Birthday: " Foreground="Gray"/>
+                    <TextBlock x:ConnectionId='7' HorizontalAlignment="Left" x:Name="txt_phone" Text="Phone: " Foreground="Gray"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Pivot Background="{ThemeResource SystemControlChromeHighAcrylicElementMediumBrush}">
+                <Pivot.RightHeader>
+                    <CommandBar OverflowButtonVisibility="Collapsed" Background="Transparent" Margin="0,10">
+                        <AppBarButton Icon="MusicInfo"/>
+                        <AppBarSeparator/>
+                        <AppBarButton Icon="Add"/>
+                        <AppBarSeparator/>
+                        <!--<AppBarButton Label="Đăng Xuất" Icon="Clear" Click="btnSignOut"/>-->
+                    </CommandBar>
+                </Pivot.RightHeader>
+                <PivotItem Header="Play List">
+                    <Grid>
+                        <ListView x:ConnectionId='2' ItemsSource="" x:Name="MenuList">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Padding="12" Orientation="Horizontal">
+                                        <Ellipse Height="77" Width="77">
+                                            <Ellipse.Fill>
+                                                <ImageBrush />
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <StackPanel Margin="24,12,0,0">
+                                            <TextBlock Text="" VerticalAlignment="Center" 
+                                               Style="{ThemeResource BaseTextBlockStyle}" 
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}"
+                                                Margin="0,0,0,0"/>
+                                            <TextBlock Text="" VerticalAlignment="Center"                                                
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" 
+                                               Margin="0,7,0,0"/>
+                                        </StackPanel>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+
     </Grid>
 </Page>
 

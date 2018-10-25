@@ -1,11 +1,17 @@
-﻿using KaniMusic_UWP_V0._1.Views;
+﻿using KaniMusic_UWP_V0._1.Entity;
+using KaniMusic_UWP_V0._1.Service;
+using KaniMusic_UWP_V0._1.Views;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -26,6 +32,8 @@ namespace KaniMusic_UWP_V0._1
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private static string API_LOGIN = "http://2-dot-backup-server-002.appspot.com/_api/v2/members/authentication";
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -35,13 +43,14 @@ namespace KaniMusic_UWP_V0._1
         private readonly IList<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
             ("home", typeof(Views.HomePage)),
-            ("myaccount", typeof(Views.MyAccount)),
-            ("videos", typeof(MainPage)),
+            ("rank", typeof(Views.Rank)),
             ("musics", typeof(Views.Music)),
-            ("listened", typeof(MainPage)),
-            ("favorite", typeof(MainPage)),
-            ("playlist", typeof(MainPage)),
-            ("listened", typeof(MainPage)),
+            ("playlists", typeof(Views.PlayList)),
+            ("videos", typeof(Views.MyVideo)),
+            ("listened", typeof(Views.Listened)),
+            ("favorite", typeof(Views.Favorite)),
+            ("myaccount", typeof(Views.MyAccount)),
+
         };
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)
@@ -59,7 +68,7 @@ namespace KaniMusic_UWP_V0._1
             ContentFrame.Navigated += On_Navigated;
 
             // NavView doesn't load any page by default: you need to specify it
-            NavView_Navigate("musics");
+            NavView_Navigate("home");
 
             // Add keyboard accelerators for backwards navigation
             var goBack = new KeyboardAccelerator { Key = VirtualKey.GoBack };
@@ -76,11 +85,13 @@ namespace KaniMusic_UWP_V0._1
             this.KeyboardAccelerators.Add(altLeft);
         }
 
+        //Nút setting
         private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-
             if (args.IsSettingsInvoked)
-                ContentFrame.Navigate(typeof(MainPage));
+            {
+                //ContentFrame.Navigate(typeof(MainPage));
+            }
             else
             {
                 // Getting the Tag from Content (args.InvokedItem is the content of NavigationViewItem)
@@ -144,6 +155,7 @@ namespace KaniMusic_UWP_V0._1
             }
         }
 
+        //Sử lý show dialog form Login khi bấm nút đăng nhập
         private async void btnLogin(object sender, RoutedEventArgs e)
         {
             Login loginShow = new Login();
@@ -151,16 +163,31 @@ namespace KaniMusic_UWP_V0._1
 
         }
 
+        //Sử lý show dialog form Login khi bấm nút upload
         private async void btnUploadSong(object sender, RoutedEventArgs e)
         {
             CreateSong uploadSong = new CreateSong();
             await uploadSong.ShowAsync();
         }
 
+        //Sử lý show dialog form Login khi bấm nút đăng ký
         private async void btnRegister(object sender, RoutedEventArgs e)
         {
             Register registerShow = new Register();
             await registerShow.ShowAsync();
         }
+
+        //Sử lý Sign out khi bấm nút đăng ký
+        private async void btnSignout(object sender, RoutedEventArgs e)
+        {
+            ContentDialog noWifiDialog = new ContentDialog()
+            {
+                Title = "Thông Báo",
+                Content = "Chức năng đang phát triển..!! Đề nghị tắt chương trình và bật lại.!!",
+                CloseButtonText = "Ok"
+            };
+            await noWifiDialog.ShowAsync();
+        }
+
     }
 }

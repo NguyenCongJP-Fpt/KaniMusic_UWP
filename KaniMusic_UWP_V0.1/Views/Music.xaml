@@ -7,13 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:entity="using:KaniMusic_UWP_V0._1.Entity"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="MyMusicLoaded">
 
     <Grid>
         <Pivot Background="{ThemeResource SystemControlChromeHighAcrylicElementMediumBrush}">
             <Pivot.Title>
                 <Grid>
-                    <TextBlock Text="Music I Like" Style="{ThemeResource SubheaderTextBlockStyle}"/>
+                    <TextBlock Text="My Music" Style="{ThemeResource SubheaderTextBlockStyle}"/>
                 </Grid>
             </Pivot.Title>
             <Pivot.RightHeader>
@@ -25,7 +25,7 @@
                     <AppBarButton Icon="Add"/>
                 </CommandBar>
             </Pivot.RightHeader>
-            <PivotItem Header="Hot Songs">
+            <PivotItem Header="Songs">
                 <Grid>
                     <ListView ItemsSource="{x:Bind ListSong, Mode=TwoWay}" x:Name="MenuList">
                         <ListView.ItemTemplate>
@@ -52,12 +52,32 @@
                     </ListView>
                 </Grid>
             </PivotItem>
-            <!--<PivotItem Header="Add Song">
-                <StackPanel>
-                    <TextBox x:Name="SongName" Header="Song Name"/>
-                    <TextBox x:Name="SongThumbnail" Header="Thumbnail"/>
-                    <Button Content="Save" Click="Button_Click"/>
-                </StackPanel>
+            <!--<PivotItem Header="Album">
+                <Grid>
+                    <ListView ItemsSource="{x:Bind MySong, Mode=TwoWay}" x:Name="Album">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="entity:Song">
+                                <StackPanel Padding="12" Orientation="Horizontal" Tag="{Binding}" Tapped="StackPanel_Tapped" AutomationProperties.Name="{x:Bind name}">
+                                    <Ellipse Height="77" Width="77">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="{x:Bind thumbnail}"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <StackPanel Margin="24,12,0,0">
+                                        <TextBlock Text="{x:Bind name}" VerticalAlignment="Center" 
+                                               Style="{ThemeResource BaseTextBlockStyle}" 
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}"
+                                                Margin="0,0,0,0"/>
+                                        <TextBlock Text="{x:Bind singer}" VerticalAlignment="Center"                                                
+                                               Foreground="{ThemeResource SystemControlPageTextBaseHighBrush}" 
+                                               Margin="0,7,0,0"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
             </PivotItem>-->
         </Pivot>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Background="#FFDEDEDE" Height="25" Margin="0,0,0,44">
